@@ -1,9 +1,10 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
 
   const links = <>
-  <li><a>Item 1</a> </li>
+  <li><NavLink to={'/'}>Home</NavLink> </li>
   <li><a>Item 2</a> </li>
               
            
@@ -43,8 +44,9 @@ const Navbar = () => {
           {links}
         </ul>
       </div>
-      <div className="navbar-end">
-        <a className="btn">Button</a>
+      <div className="navbar-end gap-2">
+        <a className="btn">Sign in</a>
+        <a className="btn">Sign up</a>
       </div>
     </div>
   );
