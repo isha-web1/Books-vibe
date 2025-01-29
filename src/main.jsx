@@ -7,6 +7,7 @@ import Home from './components/Home/Home';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import DashBoard from './components/Dashboard/DashBoard';
 import BookDetails from './components/bookDetails/BookDetails';
+import ListedBooks from './components/listedBooks/ListedBooks';
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,12 @@ const router = createBrowserRouter([
       {
          path : 'books/:bookId',
          element : <BookDetails/>,
-         loader : () => fetch('./booksData.json')
+         loader : () => fetch('./booksData.json')  // not an idal way to fetch data but for now it's ok
+      },
+      {
+        path : 'listedBooks',
+        element : <ListedBooks/>,
+        loader : () => fetch('./booksData.json')  // not an idal way to fetch data but for now it's ok
       },
       {
         path : 'dashboard',
