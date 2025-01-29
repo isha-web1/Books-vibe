@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Book = ({ book }) => {
-  const { image, author, bookName, review, tags, category, bookId } = book;
+  const { image, author, bookName,  tags, category, bookId } = book;
   return (
     <Link to={`books/${bookId}`}>
     <div className="card bg-base-100 w-96 shadow-sm p-6">
@@ -11,8 +11,8 @@ const Book = ({ book }) => {
       </figure>
       <div className="card-body">
         <div className="gap-8 justify-center flex">
-          {tags.map((tag) => (
-            <button className="badge badge-soft badge-accent">{tag}</button>
+          {tags.map((tag, idx) => (
+            <button key={idx} className="badge badge-soft badge-accent">{tag}</button>
           ))}
         </div>
         <h2 className="card-title">{bookName}</h2>
